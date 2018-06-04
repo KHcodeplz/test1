@@ -9,25 +9,24 @@ public class JDBCTemplate {
 		Connection result = null;
 		Properties prop = new Properties();
 		
-		String prop_Path = JDBCTemplate.class.getResource("/config/driver.properties").getPath();
+		String prop_Path = JDBCTemplate.class.getResource("/com/config/driver/driver.properties").getPath();		
 		
 		try {
 			prop.load(new FileReader(prop_Path));
 			
 //			use in oracle & windows
 //			
-//			String driver = prop.getProperty("oracleDriver");
-//			String url = prop.getProperty("oracleURL");
-//			String dbid = prop.getProperty("oracleID");
-//			String dbpw = prop.getProperty("oraclePW");
-//			
+			String driver = prop.getProperty("oracleDriver");
+			String url = prop.getProperty("oracleURL");
+			String dbid = prop.getProperty("oracleID");
+			String dbpw = prop.getProperty("oraclePW");
 			
 //			use in mysql & mac os
-			
-			String driver = prop.getProperty("mysqlDriver");
-			String url = prop.getProperty("mysqlURL");
-			String dbid = prop.getProperty("mysqlID");
-			String dbpw = prop.getProperty("mysqlPW");
+//			
+//			String driver = prop.getProperty("mysqlDriver");
+//			String url = prop.getProperty("mysqlURL");
+//			String dbid = prop.getProperty("mysqlID");
+//			String dbpw = prop.getProperty("mysqlPW");
 			
 			Class.forName(driver);
 			
